@@ -1,6 +1,6 @@
 class Home {
   constructor() {
-    this.template = `
+    this.template =/*html*/ `
     <div class="wed-heading row">
         <div class="wed-heading-wrapper col">
             <h1>Angelo & Klaudia

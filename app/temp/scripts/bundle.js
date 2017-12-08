@@ -80,18 +80,17 @@ var _Couple2 = _interopRequireDefault(_Couple);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import TriCouple from './modules/TriCouple';
-
-
+//Load Home on window.laod
 var home = new _Home2.default();
 
 window.addEventListener("load", function () {
   var loader = new _Home2.default();
   loader.loadHome();
 });
+//End of home
 
+//Couple instance
 var couple = new _Couple2.default();
-// var triCouple = new TriCouple();
 
 /***/ }),
 /* 1 */
@@ -112,7 +111,7 @@ var Home = function () {
   function Home() {
     _classCallCheck(this, Home);
 
-    this.template = "\n    <div class=\"wed-heading row\">\n        <div class=\"wed-heading-wrapper col\">\n            <h1>Angelo & Klaudia\n                <br>\n                <span class=\"std\">Save the date</span>\n                <span class=\"wed-date\">22.08.2015</span>\n            </h1>\n        </div>\n    </div>\n    ";
+    this.template = /*html*/"\n    <div class=\"wed-heading row\">\n        <div class=\"wed-heading-wrapper col\">\n            <h1>Angelo & Klaudia\n                <br>\n                <span class=\"std\">Save the date</span>\n                <span class=\"wed-date\">22.08.2015</span>\n            </h1>\n        </div>\n    </div>\n    ";
     this.homeMenu = document.querySelector("#home");
     this.spa = document.querySelector(".wed-spa");
     this.homeSection = document.querySelector(".wed-home");
@@ -153,7 +152,7 @@ exports.default = Home;
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -162,43 +161,52 @@ var _TriCouple = __webpack_require__(3);
 
 var _TriCouple2 = _interopRequireDefault(_TriCouple);
 
+var _Message = __webpack_require__(4);
+
+var _Message2 = _interopRequireDefault(_Message);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var Couple = function () {
-    function Couple() {
-        _classCallCheck(this, Couple);
+  function Couple() {
+    _classCallCheck(this, Couple);
 
-        //Start of HTML Template
-        this.template = '\n      <div class="message-popup"></div>\n      <div class="wed-couple container">\n          <div class="wed-couple-newlyweds wed-couple-bride">\n              <div class="wed-couple-newlyweds-img wed-couple-bride-img">\n                  <div class="wed-couple-name-row row">\n                      <div class="wed-couple-desc wed-couple-name wed-couple-name-bride col-md-auto">\n                          <h1>Klaudia Kim</h1>\n                      </div>\n                      <div class="wed-couple-desc wed-couple-position wed-couple-position-bride col-md-auto">\n                          <span>The Bride</span>\n                      </div>\n                  </div>\n\n                  <div class="wed-couple-newlyweds-message wed-couple-newlyweds-message-bride">\n                      <span>Message from the Bride</span>\n                  </div>\n\n                  </div>\n                  </div>\n\n          <div class="wed-couple-newlyweds wed-couple-groom">\n              <div class="wed-couple-newlyweds-img wed-couple-groom-img">\n                  <div class="wed-couple-name-row row">\n                      <div class="wed-couple-desc wed-couple-name wed-couple-name-groom col-md-auto">\n                          <h1>Angelo Kim</h1>\n                      </div>\n                      <div class="wed-couple-desc wed-couple-position wed-couple-position-groom col-md-auto">\n                          <span>The Groom</span>\n                      </div>\n                  </div>\n\n                      <div class="wed-couple-newlyweds-message wed-couple-newlyweds-message-groom">\n                          <span>Message from the Groom</span>\n                      </div>\n\n              </div>\n          </div>\n      </div>\n    ';
-        // End of HTML Template
-        //DOM declaration
-        this.spa = document.querySelector(".wed-spa");
-        this.coupleButton = document.querySelector('#couple');
-        this.homeSection = document.querySelector(".wed-home");
+    //Start of HTML Template
+    this.template = /*html*/'\n      <div class="message-popup"></div>\n      <div class="wed-couple container">\n          <div class="wed-couple-newlyweds wed-couple-bride">\n            <div class="wed-couple-newlyweds-img wed-couple-bride-img">\n              <div class="wed-couple-name-row row">\n                <div class="wed-couple-desc wed-couple-name wed-couple-name-bride col-md-auto">\n                  <h1>Klaudia Kim</h1>\n                </div>\n                <div class="wed-couple-desc wed-couple-position wed-couple-position-bride col-md-auto">\n                  <span>The Bride</span>\n                </div>\n              </div>\n              <div class="wed-couple-newlyweds-message wed-couple-newlyweds-message-bride">\n                <span>Message from the Bride</span>\n              </div>\n\n            </div>\n          </div>\n          <div class="wed-couple-newlyweds wed-couple-groom">\n            <div class="wed-couple-newlyweds-img wed-couple-groom-img">\n              <div class="wed-couple-name-row row">\n                <div class="wed-couple-desc wed-couple-name wed-couple-name-groom col-md-auto">\n                  <h1>Angelo Kim</h1>\n                </div>\n                <div class="wed-couple-desc wed-couple-position wed-couple-position-groom col-md-auto">\n                  <span>The Groom</span>\n                </div>\n              </div>\n\n              <div class="wed-couple-newlyweds-message wed-couple-newlyweds-message-groom">\n                <span>Message from the Groom</span>\n              </div>\n\n            </div>\n          </div>\n      </div>\n    ';
+    // End of HTML Template
+    //DOM declaration
+    this.spa = document.querySelector(".wed-spa");
+    this.coupleButton = document.querySelector('#couple');
+    this.homeSection = document.querySelector(".wed-home");
 
-        //initialize methods
-        this.loadCouple();
+    //initialize methods
+    this.loadCouple();
+  }
+
+  _createClass(Couple, [{
+    key: 'loadCouple',
+
+    // End Constructor
+
+    // Start methods
+    // 1. Load couple template on coupleButton click
+    value: function loadCouple() {
+      var _this = this;
+      this.coupleButton.addEventListener("click", function () {
+        _this.homeSection.classList.remove('wed-front');
+        _this.spa.innerHTML = _this.template;
+        var triCouple = new _TriCouple2.default();
+        var brideMessage = new _Message2.default('Klaudia', 'Kim', 'bride');
+        var groomMessage = new _Message2.default('Angelo', 'Kim', 'groom');
+        brideMessage.showMessage();
+        groomMessage.showMessage();
+      });
     }
+  }]);
 
-    _createClass(Couple, [{
-        key: 'loadCouple',
-
-        // End Constructor
-
-        // Start methods
-        value: function loadCouple() {
-            var _this = this;
-            this.coupleButton.addEventListener("click", function () {
-                _this.homeSection.classList.remove('wed-front');
-                _this.spa.innerHTML = _this.template;
-                var triCouple = new _TriCouple2.default();
-            });
-        }
-    }]);
-
-    return Couple;
+  return Couple;
 }();
 
 exports.default = Couple;
@@ -258,7 +266,6 @@ var TriCouple = function () {
       var _this2 = this;
 
       this.wedCoupleNewlyweds.forEach(function (partner) {
-        console.log('log for each partner');
         partner.style.height = _this2.diagonal + 'px';
       });
     }
@@ -347,6 +354,62 @@ var TriCouple = function () {
 }();
 
 exports.default = TriCouple;
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Message = function () {
+  function Message(fName, lName, position) {
+    _classCallCheck(this, Message);
+
+    this.fName = fName;
+    this.lName = lName;
+    this.position = position;
+
+    this.template = /*html*/'\n    <div class="message">\n        <div class="message-close">x</div>\n        <h1>My name is ' + this.fName + ' ' + this.lName + ', ' + this.position + '</h1>\n    </div>';
+
+    this.messageButtons = document.querySelectorAll('.wed-couple-newlyweds-message');
+    this.messagePopup = document.querySelector('.message-popup');
+
+    //Initiate Methods
+  }
+
+  //declare methods
+
+
+  _createClass(Message, [{
+    key: 'showMessage',
+    value: function showMessage() {
+      var _this = this;
+      this.messageButtons.forEach(function (message) {
+        message.addEventListener('click', function () {
+          if (message.classList.contains('wed-couple-newlyweds-message-' + _this.position)) {
+            _this.messagePopup.innerHTML = _this.template;
+          }
+        });
+      });
+    }
+
+    //End of class. Don't add anything below this line.
+
+  }]);
+
+  return Message;
+}();
+
+exports.default = Message;
 
 /***/ })
 /******/ ]);

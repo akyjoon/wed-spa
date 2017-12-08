@@ -32,7 +32,6 @@ class TriCouple {
   //SET HEIGHT
   setHeight() {
     this.wedCoupleNewlyweds.forEach((partner) => {
-      console.log('log for each partner');
       partner.style.height = this.diagonal + 'px';
     })
 

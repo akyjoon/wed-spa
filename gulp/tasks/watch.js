@@ -4,6 +4,7 @@ browserSync = require('browser-sync').create();
 gulp.task('watch', ['cssInject'], function() {
   browserSync.init({
     notify: false,
+    browser: "chrome",
     server: {
       baseDir: "app"
     }
