@@ -316,6 +316,7 @@ $message-size: 150px;
 
 //message pop-up
 .message {
+    display: none;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -326,6 +327,10 @@ $message-size: 150px;
     height: 500px;
     background-color: $dark-violet;
     z-index: 200;
+
+    &-show {
+      display: block;
+    }
 
     .message-close {
         position: absolute;
@@ -339,4 +344,5 @@ $message-size: 150px;
         background-color: $dark-tone;
         right: 0;
     }
+
 }

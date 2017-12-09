@@ -247,6 +247,7 @@ body {
       transition: 1s; } }
 
 .message {
+  display: none;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -257,6 +258,8 @@ body {
   height: 500px;
   background-color: #8c69a0;
   z-index: 200; }
+  .message-show {
+    display: block; }
   .message .message-close {
     position: absolute;
     cursor: pointer;

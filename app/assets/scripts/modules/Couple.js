@@ -3,6 +3,10 @@ import Message from './Message';
 
 class Couple {
   constructor() {
+
+    this.groom = new Message('Angelo', 'Kim', 'groom');
+    this.bride = new Message('Klaudia', 'Kim', 'bride');
+
 //Start of HTML Template
     this.template =/*html*/ `
       <div class="message-popup"></div>
@@ -43,43 +47,40 @@ class Couple {
       </div>
     `;
 // End of HTML Template
+
 //DOM declaration
   this.spa = document.querySelector(".wed-spa");
-  this.coupleButton = document.querySelector('#couple');
-  this.homeSection = document.querySelector(".wed-home");
+//End of DOM declaration.
 
-  //initialize methods
-  this.loadCouple();
+//initialize methods.
+
+//End methods.
 
   };
-// End Constructor
+//------------------------------End Constructor
 
 // Start methods
-// 1. Load couple template on coupleButton click
-loadCouple() {
-  var _this = this;
-  this.coupleButton.addEventListener("click", function() {
-    _this.homeSection.classList.remove('wed-front');
-    _this.spa.innerHTML = _this.template;
-    var triCouple = new TriCouple;
-    var brideMessage = new Message('Klaudia', 'Kim', 'bride');
-    var groomMessage = new Message('Angelo', 'Kim', 'groom');
-    brideMessage.showMessage();
-    groomMessage.showMessage();
-  });
-};
-
-// 2. Load message box on messageButton Click
-
-
-
-
-
-
+//1. Inject html template
+injectTemplate() {
+  this.spa.innerHTML = this.template;
+}
+//2. Inject couple style
+injectStyle() {
+  var triCouple = new TriCouple;
+}
+//3. Load template and style.
+loadCoupleTempStyle() {
+  this.injectTemplate();
+  this.injectStyle();
+  this.bride.showMessage();
+  this.groom.showMessage();
 
 
 
 }
+
+};
+
 
 
 export default Couple;

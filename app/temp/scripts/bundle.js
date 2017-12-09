@@ -60,40 +60,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _Home = __webpack_require__(1);
-
-var _Home2 = _interopRequireDefault(_Home);
-
-var _Couple = __webpack_require__(2);
-
-var _Couple2 = _interopRequireDefault(_Couple);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-//Load Home on window.laod
-var home = new _Home2.default();
-
-window.addEventListener("load", function () {
-  var loader = new _Home2.default();
-  loader.loadHome();
-});
-//End of home
-
-//Couple instance
-var couple = new _Couple2.default();
-
-/***/ }),
-/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -115,18 +86,9 @@ var Home = function () {
     this.homeMenu = document.querySelector("#home");
     this.spa = document.querySelector(".wed-spa");
     this.homeSection = document.querySelector(".wed-home");
-    this.homeClick();
   }
 
   _createClass(Home, [{
-    key: "homeClick",
-    value: function homeClick() {
-      var that = this;
-      this.homeMenu.addEventListener("click", function () {
-        that.loadHome();
-      });
-    }
-  }, {
     key: "loadHome",
     value: function loadHome() {
       this.homeSection.classList.add('wed-front');
@@ -145,6 +107,36 @@ var Home = function () {
 exports.default = Home;
 
 /***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _Home = __webpack_require__(0);
+
+var _Home2 = _interopRequireDefault(_Home);
+
+var _Navigation = __webpack_require__(2);
+
+var _Navigation2 = _interopRequireDefault(_Navigation);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// import Couple from './modules/Couple';
+// import Message from './modules/Message';
+
+//Load Home on window.laod
+var home = new _Home2.default();
+
+window.addEventListener("load", function () {
+  var loader = new _Home2.default();
+  loader.loadHome();
+});
+//End of home
+var navigation = new _Navigation2.default();
+
+/***/ }),
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -157,11 +149,81 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _TriCouple = __webpack_require__(3);
+var _Home = __webpack_require__(0);
+
+var _Home2 = _interopRequireDefault(_Home);
+
+var _Couple = __webpack_require__(3);
+
+var _Couple2 = _interopRequireDefault(_Couple);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Navigation = function () {
+  function Navigation() {
+    _classCallCheck(this, Navigation);
+
+    this.couple = new _Couple2.default();
+    this.spa = document.querySelector(".wed-spa");
+
+    this.homeButton = document.querySelector('#home');
+    this.coupleButton = document.querySelector('#couple');
+    this.bridesmaidButton = document.querySelector('#bridesmaid');
+    this.groomsmenButton = document.querySelector('#groomsmen');
+    this.eventsButton = document.querySelector('#events');
+    this.storyButton = document.querySelector('#story');
+    this.rsvpButton = document.querySelector('#rsvp');
+
+    this.loadHome();
+    this.loadCouple();
+  }
+
+  _createClass(Navigation, [{
+    key: 'loadHome',
+    value: function loadHome() {
+      var _this = this;
+      this.homeButton.addEventListener("click", function () {
+        var home = new _Home2.default();
+        _this.spa.innerHTML = home.template;
+      });
+    }
+  }, {
+    key: 'loadCouple',
+    value: function loadCouple() {
+      var _this = this;
+      this.coupleButton.addEventListener("click", function () {
+        _this.couple.loadCoupleTempStyle();
+        // _this.couple.bride.showMessage();
+        // _this.couple.groom.showMessage();
+      });
+    }
+  }]);
+
+  return Navigation;
+}();
+
+exports.default = Navigation;
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _TriCouple = __webpack_require__(4);
 
 var _TriCouple2 = _interopRequireDefault(_TriCouple);
 
-var _Message = __webpack_require__(4);
+var _Message = __webpack_require__(5);
 
 var _Message2 = _interopRequireDefault(_Message);
 
@@ -173,46 +235,60 @@ var Couple = function () {
   function Couple() {
     _classCallCheck(this, Couple);
 
+    this.groom = new _Message2.default('Angelo', 'Kim', 'groom');
+    this.bride = new _Message2.default('Klaudia', 'Kim', 'bride');
+
     //Start of HTML Template
     this.template = /*html*/'\n      <div class="message-popup"></div>\n      <div class="wed-couple container">\n          <div class="wed-couple-newlyweds wed-couple-bride">\n            <div class="wed-couple-newlyweds-img wed-couple-bride-img">\n              <div class="wed-couple-name-row row">\n                <div class="wed-couple-desc wed-couple-name wed-couple-name-bride col-md-auto">\n                  <h1>Klaudia Kim</h1>\n                </div>\n                <div class="wed-couple-desc wed-couple-position wed-couple-position-bride col-md-auto">\n                  <span>The Bride</span>\n                </div>\n              </div>\n              <div class="wed-couple-newlyweds-message wed-couple-newlyweds-message-bride">\n                <span>Message from the Bride</span>\n              </div>\n\n            </div>\n          </div>\n          <div class="wed-couple-newlyweds wed-couple-groom">\n            <div class="wed-couple-newlyweds-img wed-couple-groom-img">\n              <div class="wed-couple-name-row row">\n                <div class="wed-couple-desc wed-couple-name wed-couple-name-groom col-md-auto">\n                  <h1>Angelo Kim</h1>\n                </div>\n                <div class="wed-couple-desc wed-couple-position wed-couple-position-groom col-md-auto">\n                  <span>The Groom</span>\n                </div>\n              </div>\n\n              <div class="wed-couple-newlyweds-message wed-couple-newlyweds-message-groom">\n                <span>Message from the Groom</span>\n              </div>\n\n            </div>\n          </div>\n      </div>\n    ';
     // End of HTML Template
+
     //DOM declaration
     this.spa = document.querySelector(".wed-spa");
-    this.coupleButton = document.querySelector('#couple');
-    this.homeSection = document.querySelector(".wed-home");
+    //End of DOM declaration.
 
-    //initialize methods
-    this.loadCouple();
+    //initialize methods.
+
+    //End methods.
   }
 
   _createClass(Couple, [{
-    key: 'loadCouple',
+    key: 'injectTemplate',
 
-    // End Constructor
+    //------------------------------End Constructor
 
     // Start methods
-    // 1. Load couple template on coupleButton click
-    value: function loadCouple() {
-      var _this = this;
-      this.coupleButton.addEventListener("click", function () {
-        _this.homeSection.classList.remove('wed-front');
-        _this.spa.innerHTML = _this.template;
-        var triCouple = new _TriCouple2.default();
-        var brideMessage = new _Message2.default('Klaudia', 'Kim', 'bride');
-        var groomMessage = new _Message2.default('Angelo', 'Kim', 'groom');
-        brideMessage.showMessage();
-        groomMessage.showMessage();
-      });
+    //1. Inject html template
+    value: function injectTemplate() {
+      this.spa.innerHTML = this.template;
+    }
+    //2. Inject couple style
+
+  }, {
+    key: 'injectStyle',
+    value: function injectStyle() {
+      var triCouple = new _TriCouple2.default();
+    }
+    //3. Load template and style.
+
+  }, {
+    key: 'loadCoupleTempStyle',
+    value: function loadCoupleTempStyle() {
+      this.injectTemplate();
+      this.injectStyle();
+      this.bride.showMessage();
+      this.groom.showMessage();
     }
   }]);
 
   return Couple;
 }();
 
+;
+
 exports.default = Couple;
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -356,7 +432,7 @@ var TriCouple = function () {
 exports.default = TriCouple;
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -378,27 +454,62 @@ var Message = function () {
     this.lName = lName;
     this.position = position;
 
-    this.template = /*html*/'\n    <div class="message">\n        <div class="message-close">x</div>\n        <h1>My name is ' + this.fName + ' ' + this.lName + ', ' + this.position + '</h1>\n    </div>';
+    this.template = /*html*/'\n    <div class="message message-show">\n        <div class="message-close">x</div>\n        <h1>\n          My name is ' + this.fName + ' ' + this.lName + ', ' + this.position + '\n        </h1>\n    </div>';
 
-    this.messageButtons = document.querySelectorAll('.wed-couple-newlyweds-message');
-    this.messagePopup = document.querySelector('.message-popup');
+    this.elements = function () {
+      var messageButtons = document.querySelectorAll('.wed-couple-newlyweds-message');
+      var messagePopup = document.querySelector('.message-popup');
+      var messageClose = document.querySelector('.message-close');
+      var messageDiv = document.querySelector('.message');
+      return {
+        messageButtons: messageButtons,
+        messagePopup: messagePopup,
+        messageClose: messageClose,
+        messageDiv: messageDiv
+      };
+    };
 
     //Initiate Methods
+
+    //End of Methods.
   }
 
   //declare methods
+  // 1. show message on click.
 
 
   _createClass(Message, [{
     key: 'showMessage',
     value: function showMessage() {
       var _this = this;
-      this.messageButtons.forEach(function (message) {
-        message.addEventListener('click', function () {
+      var els = new this.elements();
+      var mB = els.messageButtons;
+      var mP = els.messagePopup;
+      var mD = els.messageDiv;
+      mB.forEach(function (message) {
+        message.onclick = function () {
+          console.log(_this.position);
           if (message.classList.contains('wed-couple-newlyweds-message-' + _this.position)) {
-            _this.messagePopup.innerHTML = _this.template;
+            console.log('bride or groom?');
+            mP.innerHTML = _this.template;
+            var mC = els.messageClose;
           }
-        });
+          _this.closeMessage();
+        };
+      });
+    }
+  }, {
+    key: 'closeMessage',
+
+
+    // 2. close message.
+    value: function closeMessage() {
+      var els = new this.elements();
+      var mC = els.messageClose;
+      var mD = els.messageDiv;
+      mC.addEventListener("click", function () {
+        console.log(this);
+        mD.style.display = 'none';
       });
     }
 

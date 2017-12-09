@@ -1,10 +1,8 @@
 import Home from './Home';
 import Couple from './Couple';
-var home = new Home();
-var couple = new Couple();
-
 class Navigation {
   constructor() {
+    this.couple = new Couple();
     this.spa = document.querySelector(".wed-spa");
 
     this.homeButton = document.querySelector('#home');
@@ -23,6 +21,7 @@ class Navigation {
   loadHome() {
     var _this = this;
     this.homeButton.addEventListener("click", function() {
+      var home = new Home();
       _this.spa.innerHTML = home.template;
     })
   };
@@ -30,7 +29,10 @@ class Navigation {
   loadCouple() {
     var _this = this;
     this.coupleButton.addEventListener("click", function() {
-      _this.spa.innerHTML = couple.template;
+      _this.couple.loadCoupleTempStyle();
+      // _this.couple.bride.showMessage();
+      // _this.couple.groom.showMessage();
+
     })
   };
 

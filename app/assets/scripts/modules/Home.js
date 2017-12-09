@@ -14,15 +14,9 @@ class Home {
     this.homeMenu = document.querySelector("#home");
     this.spa = document.querySelector(".wed-spa");
     this.homeSection = document.querySelector(".wed-home");
-    this.homeClick();
   };
 
-  homeClick() {
-    var that = this;
-    this.homeMenu.addEventListener("click", function(){
-        that.loadHome();
-    })
-  };
+
 
   loadHome() {
     this.homeSection.classList.add('wed-front');
