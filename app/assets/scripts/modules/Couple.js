@@ -3,9 +3,7 @@ import Message from './Message';
 
 class Couple {
   constructor() {
-
-    this.groom = new Message('Angelo', 'Kim', 'groom');
-    this.bride = new Message('Klaudia', 'Kim', 'bride');
+    this.message = new Message();
 
 //Start of HTML Template
     this.template =/*html*/ `
@@ -72,8 +70,7 @@ injectStyle() {
 loadCoupleTempStyle() {
   this.injectTemplate();
   this.injectStyle();
-  this.bride.showMessage();
-  this.groom.showMessage();
+  this.message.showMessage();
 
 
 

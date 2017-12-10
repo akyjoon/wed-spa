@@ -1,22 +1,36 @@
 class Message {
-  constructor(fName, lName, position) {
-    this.fName = fName;
-    this.lName = lName;
-    this.position = position;
+  constructor() {
+    this.fName = '';
+    this.lName = '';
+    this.position = '';
 
-    this.template = /*html*/`
-    <div class="message message-show">
+    this.bride = {
+      fName: 'Klaudia',
+      lName: 'Kim',
+      position: 'bride'
+    };
+
+    this.groom = {
+      fName: 'angelo',
+      lName: 'Kim',
+      position: 'groom'
+    };
+
+    this.template = function() {
+      return /*html*/`
+      <div class="message message-show">
         <div class="message-close">x</div>
         <h1>
           My name is ${this.fName} ${this.lName}, ${this.position}
         </h1>
-    </div>`;
+      </div>`;
+    }
 
     this.elements = function() {
       let messageButtons  = document.querySelectorAll('.wed-couple-newlyweds-message');
       let messagePopup    = document.querySelector('.message-popup');
       let messageClose    = document.querySelector('.message-close');
-      let messageDiv = document.querySelector('.message');
+      let messageDiv      = document.querySelector('.message');
       return {
         messageButtons: messageButtons,
         messagePopup: messagePopup,
@@ -41,12 +55,23 @@ class Message {
     let mD = els.messageDiv;
     mB.forEach(function(message) {
       message.onclick = function() {
-        console.log(_this.position)
-      if (message.classList.contains(`wed-couple-newlyweds-message-${_this.position}`)) {
-        console.log('bride or groom?')
-        mP.innerHTML = _this.template;
-        let mC = els.messageClose;
+      if (message.classList.contains(`wed-couple-newlyweds-message-bride`)) {
+        console.log('bride')
+        _this.fName = _this.bride.fName
+        _this.lName = _this.bride.lName
+        _this.position = _this.bride.position
+        console.log(_this.fName)
+        mP.innerHTML = _this.template();
+      } else {
+        console.log('groom')
+        _this.fName = _this.groom.fName
+        _this.lName = _this.groom.lName
+        _this.position = _this.groom.position
+        console.log(_this.fName)
+        mP.innerHTML = _this.template();
+
       }
+      let mC = els.messageClose;
       _this.closeMessage();
     }
   });
@@ -58,7 +83,7 @@ class Message {
     let mC = els.messageClose;
     let mD = els.messageDiv;
     mC.addEventListener("click", function() {
-      console.log(this)
+      console.log('close message')
       mD.style.display = 'none';
     })
   }

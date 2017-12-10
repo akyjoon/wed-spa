@@ -195,8 +195,6 @@ var Navigation = function () {
       var _this = this;
       this.coupleButton.addEventListener("click", function () {
         _this.couple.loadCoupleTempStyle();
-        // _this.couple.bride.showMessage();
-        // _this.couple.groom.showMessage();
       });
     }
   }]);
@@ -235,8 +233,7 @@ var Couple = function () {
   function Couple() {
     _classCallCheck(this, Couple);
 
-    this.groom = new _Message2.default('Angelo', 'Kim', 'groom');
-    this.bride = new _Message2.default('Klaudia', 'Kim', 'bride');
+    this.message = new _Message2.default();
 
     //Start of HTML Template
     this.template = /*html*/'\n      <div class="message-popup"></div>\n      <div class="wed-couple container">\n          <div class="wed-couple-newlyweds wed-couple-bride">\n            <div class="wed-couple-newlyweds-img wed-couple-bride-img">\n              <div class="wed-couple-name-row row">\n                <div class="wed-couple-desc wed-couple-name wed-couple-name-bride col-md-auto">\n                  <h1>Klaudia Kim</h1>\n                </div>\n                <div class="wed-couple-desc wed-couple-position wed-couple-position-bride col-md-auto">\n                  <span>The Bride</span>\n                </div>\n              </div>\n              <div class="wed-couple-newlyweds-message wed-couple-newlyweds-message-bride">\n                <span>Message from the Bride</span>\n              </div>\n\n            </div>\n          </div>\n          <div class="wed-couple-newlyweds wed-couple-groom">\n            <div class="wed-couple-newlyweds-img wed-couple-groom-img">\n              <div class="wed-couple-name-row row">\n                <div class="wed-couple-desc wed-couple-name wed-couple-name-groom col-md-auto">\n                  <h1>Angelo Kim</h1>\n                </div>\n                <div class="wed-couple-desc wed-couple-position wed-couple-position-groom col-md-auto">\n                  <span>The Groom</span>\n                </div>\n              </div>\n\n              <div class="wed-couple-newlyweds-message wed-couple-newlyweds-message-groom">\n                <span>Message from the Groom</span>\n              </div>\n\n            </div>\n          </div>\n      </div>\n    ';
@@ -275,8 +272,7 @@ var Couple = function () {
     value: function loadCoupleTempStyle() {
       this.injectTemplate();
       this.injectStyle();
-      this.bride.showMessage();
-      this.groom.showMessage();
+      this.message.showMessage();
     }
   }]);
 
@@ -447,14 +443,29 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var Message = function () {
-  function Message(fName, lName, position) {
+  function Message() {
     _classCallCheck(this, Message);
 
-    this.fName = fName;
-    this.lName = lName;
-    this.position = position;
+    this.fName = '';
+    this.lName = '';
+    this.position = '';
 
-    this.template = /*html*/'\n    <div class="message message-show">\n        <div class="message-close">x</div>\n        <h1>\n          My name is ' + this.fName + ' ' + this.lName + ', ' + this.position + '\n        </h1>\n    </div>';
+    this.bride = {
+      fName: 'Klaudia',
+      lName: 'Kim',
+      position: 'bride'
+    };
+
+    this.groom = {
+      fName: 'angelo',
+      lName: 'Kim',
+      position: 'groom'
+    };
+
+    this.template = function () {
+      return (/*html*/'\n      <div class="message message-show">\n        <div class="message-close">x</div>\n        <h1>\n          My name is ' + this.fName + ' ' + this.lName + ', ' + this.position + '\n        </h1>\n      </div>'
+      );
+    };
 
     this.elements = function () {
       var messageButtons = document.querySelectorAll('.wed-couple-newlyweds-message');
@@ -488,12 +499,22 @@ var Message = function () {
       var mD = els.messageDiv;
       mB.forEach(function (message) {
         message.onclick = function () {
-          console.log(_this.position);
-          if (message.classList.contains('wed-couple-newlyweds-message-' + _this.position)) {
-            console.log('bride or groom?');
-            mP.innerHTML = _this.template;
-            var mC = els.messageClose;
+          if (message.classList.contains('wed-couple-newlyweds-message-bride')) {
+            console.log('bride');
+            _this.fName = _this.bride.fName;
+            _this.lName = _this.bride.lName;
+            _this.position = _this.bride.position;
+            console.log(_this.fName);
+            mP.innerHTML = _this.template();
+          } else {
+            console.log('groom');
+            _this.fName = _this.groom.fName;
+            _this.lName = _this.groom.lName;
+            _this.position = _this.groom.position;
+            console.log(_this.fName);
+            mP.innerHTML = _this.template();
           }
+          var mC = els.messageClose;
           _this.closeMessage();
         };
       });
@@ -508,7 +529,7 @@ var Message = function () {
       var mC = els.messageClose;
       var mD = els.messageDiv;
       mC.addEventListener("click", function () {
-        console.log(this);
+        console.log('close message');
         mD.style.display = 'none';
       });
     }

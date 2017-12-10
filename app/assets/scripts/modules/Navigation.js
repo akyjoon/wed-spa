@@ -30,9 +30,6 @@ class Navigation {
     var _this = this;
     this.coupleButton.addEventListener("click", function() {
       _this.couple.loadCoupleTempStyle();
-      // _this.couple.bride.showMessage();
-      // _this.couple.groom.showMessage();
-
     })
   };
 
