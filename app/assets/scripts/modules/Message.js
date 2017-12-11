@@ -31,7 +31,7 @@ class Message {
         <div class="message-close">x</div>
         <div class="message-desc">
           <h1>
-            My name is ${this.fName} ${this.lName}, ${this.position}
+            ${this.fName} ${this.lName}, the ${this.position}
           </h1>
           <p>${this.message}</p>
         </div>

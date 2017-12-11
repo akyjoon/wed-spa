@@ -17,7 +17,7 @@ class Navigation {
     this.loadCouple();
 
   };
-
+// 1. Load home.
   loadHome() {
     var _this = this;
     this.homeButton.addEventListener("click", function() {
@@ -26,6 +26,7 @@ class Navigation {
     })
   };
 
+// 2. Load Couple.
   loadCouple() {
     var _this = this;
     this.coupleButton.addEventListener("click", function() {
@@ -33,7 +34,13 @@ class Navigation {
     })
   };
 
-
+// 3. Load Bridesmaid.
+  loadBridesmaid() {
+    var _this = this;
+    this.bridesmaidButton.addEventListener("click", function() {
+      _this.bridesmaid.loadBridesmaidTemplate();
+    })
+  }
 }
 
 export default Navigation;

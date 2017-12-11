@@ -182,6 +182,8 @@ var Navigation = function () {
 
   _createClass(Navigation, [{
     key: 'loadHome',
+
+    // 1. Load home.
     value: function loadHome() {
       var _this = this;
       this.homeButton.addEventListener("click", function () {
@@ -191,10 +193,24 @@ var Navigation = function () {
     }
   }, {
     key: 'loadCouple',
+
+
+    // 2. Load Couple.
     value: function loadCouple() {
       var _this = this;
       this.coupleButton.addEventListener("click", function () {
         _this.couple.loadCoupleTempStyle();
+      });
+    }
+  }, {
+    key: 'loadBridesmaid',
+
+
+    // 3. Load Bridesmaid.
+    value: function loadBridesmaid() {
+      var _this = this;
+      this.bridesmaidButton.addEventListener("click", function () {
+        _this.bridesmaid.loadBridesmaidTemplate();
       });
     }
   }]);
@@ -469,7 +485,7 @@ var Message = function () {
     };
 
     this.template = function () {
-      return (/*html*/'\n      <div class="message message-show">\n        <div class="message-img">\n          <img src="' + this.img + '" />\n        </div>\n        <div class="message-close">x</div>\n        <div class="message-desc">\n          <h1>\n            My name is ' + this.fName + ' ' + this.lName + ', ' + this.position + '\n          </h1>\n          <p>' + this.message + '</p>\n        </div>\n      </div>'
+      return (/*html*/'\n      <div class="message message-show">\n        <div class="message-img">\n          <img src="' + this.img + '" />\n        </div>\n        <div class="message-close">x</div>\n        <div class="message-desc">\n          <h1>\n            ' + this.fName + ' ' + this.lName + ', the ' + this.position + '\n          </h1>\n          <p>' + this.message + '</p>\n        </div>\n      </div>'
       );
     };
 
