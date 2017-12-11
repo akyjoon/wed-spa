@@ -31,18 +31,18 @@ body {
   width: 100%;
   text-align: center; }
   .wed-heading-wrapper h1 {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Tangerine", cursive;
     color: #eef1e2;
-    font-size: 3rem;
-    letter-spacing: .2rem;
+    font-size: 1.5rem;
+    letter-spacing: .3rem;
     font-weight: bold;
     text-shadow: 2px 2px 10px #8c69a0; }
     @media screen and (min-width: 576px) {
       .wed-heading-wrapper h1 {
-        font-size: 4rem; } }
+        font-size: 2rem; } }
     @media screen and (min-width: 768px) {
       .wed-heading-wrapper h1 {
-        font-size: 5rem; } }
+        font-size: 2.5rem; } }
     @media screen and (min-width: 992px) {
       .wed-heading-wrapper h1 {
         font-size: 3rem; } }
@@ -56,7 +56,7 @@ body {
     border-top: 3px solid #8c69a0;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    margin: 15px auto; }
+    margin: 15px auto 0 auto; }
     @media screen and (min-width: 576px) {
       .wed-heading-wrapper .std {
         width: 218px; } }
@@ -191,7 +191,7 @@ body {
     width: 30%;
     right: 0;
     margin-right: 80px;
-    top: 80vh;
+    top: 70vh;
     transition: 1s; }
     .wed-couple-name-groom h1 {
       padding: 1.5rem;
@@ -222,7 +222,7 @@ body {
     .wed-couple-newlyweds-message-groom {
       margin-left: '';
       right: 5px;
-      top: 20vh;
+      top: 80vh;
       transition: 1s; } }
 
 .wed-couple-newlyweds-message-bride {
@@ -246,11 +246,18 @@ body {
   right: 0;
   width: 50%;
   margin: auto;
-  height: 500px;
-  background-color: #8c69a0;
+  height: 550px;
+  background-color: rgba(140, 105, 160, 0.5);
   z-index: 200; }
   .message-show {
     display: block; }
+  .message-img {
+    width: 40%;
+    height: 525px;
+    float: left;
+    margin: 5px; }
+    .message-img img {
+      height: 100%; }
   .message .message-close {
     position: absolute;
     cursor: pointer;

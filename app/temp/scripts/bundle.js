@@ -449,21 +449,27 @@ var Message = function () {
     this.fName = '';
     this.lName = '';
     this.position = '';
+    this.message = '';
+    this.img = '';
 
     this.bride = {
       fName: 'Klaudia',
       lName: 'Kim',
-      position: 'bride'
+      position: 'bride',
+      message: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. ',
+      img: '../assets/images/bride2.jpg'
     };
 
     this.groom = {
-      fName: 'angelo',
+      fName: 'Angelo',
       lName: 'Kim',
-      position: 'groom'
+      position: 'groom',
+      message: 'Rorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. ',
+      img: '../assets/images/bride3.jpg'
     };
 
     this.template = function () {
-      return (/*html*/'\n      <div class="message message-show">\n        <div class="message-close">x</div>\n        <h1>\n          My name is ' + this.fName + ' ' + this.lName + ', ' + this.position + '\n        </h1>\n      </div>'
+      return (/*html*/'\n      <div class="message message-show">\n        <div class="message-img">\n          <img src="' + this.img + '" />\n        </div>\n        <div class="message-close">x</div>\n        <div class="message-desc">\n          <h1>\n            My name is ' + this.fName + ' ' + this.lName + ', ' + this.position + '\n          </h1>\n          <p>' + this.message + '</p>\n        </div>\n      </div>'
       );
     };
 
@@ -504,6 +510,8 @@ var Message = function () {
             _this.fName = _this.bride.fName;
             _this.lName = _this.bride.lName;
             _this.position = _this.bride.position;
+            _this.message = _this.bride.message;
+            _this.img = _this.bride.img;
             console.log(_this.fName);
             mP.innerHTML = _this.template();
           } else {
@@ -511,6 +519,8 @@ var Message = function () {
             _this.fName = _this.groom.fName;
             _this.lName = _this.groom.lName;
             _this.position = _this.groom.position;
+            _this.message = _this.groom.message;
+            _this.img = _this.groom.img;
             console.log(_this.fName);
             mP.innerHTML = _this.template();
           }

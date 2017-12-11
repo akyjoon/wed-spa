@@ -3,26 +3,38 @@ class Message {
     this.fName = '';
     this.lName = '';
     this.position = '';
+    this.message = '';
+    this.img = '';
 
     this.bride = {
       fName: 'Klaudia',
       lName: 'Kim',
-      position: 'bride'
+      position: 'bride',
+      message: 'Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. ',
+      img: '../assets/images/bride2.jpg'
     };
 
     this.groom = {
-      fName: 'angelo',
+      fName: 'Angelo',
       lName: 'Kim',
-      position: 'groom'
+      position: 'groom',
+      message: 'Rorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. ',
+      img: '../assets/images/bride3.jpg'
     };
 
     this.template = function() {
       return /*html*/`
       <div class="message message-show">
+        <div class="message-img">
+          <img src="${this.img}" />
+        </div>
         <div class="message-close">x</div>
-        <h1>
-          My name is ${this.fName} ${this.lName}, ${this.position}
-        </h1>
+        <div class="message-desc">
+          <h1>
+            My name is ${this.fName} ${this.lName}, ${this.position}
+          </h1>
+          <p>${this.message}</p>
+        </div>
       </div>`;
     }
 
@@ -57,17 +69,21 @@ class Message {
       message.onclick = function() {
       if (message.classList.contains(`wed-couple-newlyweds-message-bride`)) {
         console.log('bride')
-        _this.fName = _this.bride.fName
-        _this.lName = _this.bride.lName
-        _this.position = _this.bride.position
-        console.log(_this.fName)
+        _this.fName = _this.bride.fName;
+        _this.lName = _this.bride.lName;
+        _this.position = _this.bride.position;
+        _this.message = _this.bride.message;
+        _this.img = _this.bride.img;
+        console.log(_this.fName);
         mP.innerHTML = _this.template();
       } else {
         console.log('groom')
-        _this.fName = _this.groom.fName
-        _this.lName = _this.groom.lName
-        _this.position = _this.groom.position
-        console.log(_this.fName)
+        _this.fName = _this.groom.fName;
+        _this.lName = _this.groom.lName;
+        _this.position = _this.groom.position;
+        _this.message = _this.groom.message;
+        _this.img = _this.groom.img;
+        console.log(_this.fName);
         mP.innerHTML = _this.template();
 
       }

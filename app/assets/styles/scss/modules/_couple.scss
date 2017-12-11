@@ -141,7 +141,7 @@
         width: 30%;
         right:0;
         margin-right: 80px;
-        top: 80vh;
+        top: 70vh;
         transition: 1s;
         h1 {
             padding: 1.5rem;
@@ -177,7 +177,7 @@ $message-size: 150px;
     @media #{$break-large} {
         margin-left:'';
         right: 5px;
-        top: 20vh;
+        top: 80vh;
         transition: 1s;
     }
 }
@@ -205,12 +205,23 @@ $message-size: 150px;
     right: 0;
     width: 50%;
     margin: auto;
-    height: 500px;
-    background-color: $dark-violet;
+    height: 550px;
+    background-color: rgba($dark-violet, .5);
     z-index: 200;
 
     &-show {
       display: block;
+    }
+
+    &-img {
+      width: 40%;
+      height: 525px;
+      float: left;
+      margin: 5px;
+      & img {
+        height: 100%;
+
+      }
     }
 
     .message-close {
