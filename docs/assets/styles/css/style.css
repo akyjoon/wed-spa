@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   overflow: hidden;
   width: 100%; }
@@ -6,7 +7,19 @@ body {
   background-color: #eef1e2;
   max-height: 100vh;
   width: 100%;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  font-family: "Lato", sans-serif; }
+
+.wed-nav {
+  width: 100%;
+  position: absolute;
+  background-color: transparent !important;
+  z-index: 1; }
+  .wed-nav a {
+    color: #8c69a0 !important;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 0.1em; }
 
 .wed-home {
   width: 100%;
@@ -15,7 +28,7 @@ body {
   padding: 0; }
 
 .wed-front {
-  background: url("../../images/front_compressed.jpg") center no-repeat;
+  background: url("../../images/front 2_compressed.jpg") center no-repeat;
   background-size: cover; }
 
 .wed-heading {
@@ -31,20 +44,21 @@ body {
   width: 100%;
   text-align: center; }
   .wed-heading-wrapper h1 {
-    font-family: 'Tangerine', cursive;
-    color: #e6b9f3;
-    font-size: 3rem;
+    font-family: "Tangerine", cursive;
+    color: #eef1e2;
+    font-size: 1.5rem;
+    letter-spacing: .3rem;
     font-weight: bold;
     text-shadow: 2px 2px 10px #8c69a0; }
     @media screen and (min-width: 576px) {
       .wed-heading-wrapper h1 {
-        font-size: 4rem; } }
+        font-size: 2rem; } }
     @media screen and (min-width: 768px) {
       .wed-heading-wrapper h1 {
-        font-size: 5rem; } }
+        font-size: 2.5rem; } }
     @media screen and (min-width: 992px) {
       .wed-heading-wrapper h1 {
-        font-size: 6rem; } }
+        font-size: 3rem; } }
   .wed-heading-wrapper .std {
     display: block;
     font-family: 'Lato', sans-serif;
@@ -55,7 +69,7 @@ body {
     border-top: 3px solid #8c69a0;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    margin: 15px auto; }
+    margin: 15px auto 0 auto; }
     @media screen and (min-width: 576px) {
       .wed-heading-wrapper .std {
         width: 218px; } }
@@ -112,7 +126,7 @@ body {
       right: 0; } }
 
 .wed-couple-groom-img {
-  background: url("../../images/bridew.jpg") right no-repeat;
+  background: url("../../../temp/assets/images/bridew.jpg") right center no-repeat;
   background-size: cover;
   -webkit-transform-origin: top right;
   transform-origin: top right; }
@@ -190,7 +204,7 @@ body {
     width: 30%;
     right: 0;
     margin-right: 80px;
-    top: 80vh;
+    top: 70vh;
     transition: 1s; }
     .wed-couple-name-groom h1 {
       padding: 1.5rem;
@@ -201,12 +215,19 @@ body {
   transition: 1s;
   position: absolute;
   top: 30vh;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
   background-color: #94b58b;
-  border-radius: 150px;
   text-align: center;
+  font-size: .7rem;
   cursor: pointer; }
+  @media screen and (min-width: 768px) {
+    .wed-couple-newlyweds-message {
+      font-size: 1rem;
+      width: 150px;
+      height: 150px;
+      border-radius: 150px; } }
   .wed-couple-newlyweds-message span {
     transition: 1s;
     position: absolute;
@@ -221,7 +242,7 @@ body {
     .wed-couple-newlyweds-message-groom {
       margin-left: '';
       right: 5px;
-      top: 20vh;
+      top: 80vh;
       transition: 1s; } }
 
 .wed-couple-newlyweds-message-bride {
@@ -245,11 +266,25 @@ body {
   right: 0;
   width: 50%;
   margin: auto;
-  height: 500px;
-  background-color: #8c69a0;
+  max-height: 550px;
+  background-color: rgba(140, 105, 160, 0.5);
   z-index: 200; }
   .message-show {
     display: block; }
+  .message-img {
+    width: 38%;
+    float: left;
+    margin: 5px; }
+    .message-img img {
+      max-width: 100%;
+      max-height: 100%; }
+  .message-desc {
+    width: 58%;
+    float: left;
+    margin-top: 50px;
+    padding: 0 10px 0 10px; }
+    .message-desc p {
+      margin-top: 30px; }
   .message .message-close {
     position: absolute;
     cursor: pointer;
@@ -262,12 +297,201 @@ body {
     background-color: #827da7;
     right: 0; }
 
-.wed-nav {
-  width: 100%;
-  background-color: transparent !important;
-  z-index: 1; }
-  .wed-nav a {
-    color: #eef1e2 !important;
-    cursor: pointer;
-    font-weight: bold;
-    letter-spacing: 0.1em; }
+.bridesmaid {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column; }
+  @media screen and (min-width: 992px) {
+    .bridesmaid {
+      flex-direction: row; } }
+  .bridesmaid-col-1 {
+    width: 100%;
+    height: 50vh;
+    position: relative; }
+    @media screen and (min-width: 992px) {
+      .bridesmaid-col-1 {
+        width: 25%;
+        height: 100vh; } }
+  .bridesmaid-1 {
+    background: url("../../../temp/assets/images/bridesmaid1.jpg") center 10% no-repeat;
+    background-size: cover;
+    order: 1; }
+  .bridesmaid-2 {
+    background: url("../../../temp/assets/images/bridesmaid2.jpg") center 21% no-repeat;
+    background-size: cover;
+    order: 2; }
+  .bridesmaid-3 {
+    background: url("../../../temp/assets/images/bridesmaid3.jpg") center 44% no-repeat;
+    background-size: cover;
+    order: 3; }
+  .bridesmaid-4 {
+    background: url("../../../temp/assets/images/bridesmaid4.jpg") center 22% no-repeat;
+    background-size: cover;
+    order: 4; }
+  .bridesmaid-name {
+    position: absolute;
+    text-align: center;
+    left: 5%;
+    top: 15%; }
+    @media screen and (min-width: 992px) {
+      .bridesmaid-name {
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        top: 85%; } }
+    .bridesmaid-name h3 {
+      font-weight: 800;
+      color: #eef1e2;
+      letter-spacing: .1rem; }
+  .bridesmaid-quote {
+    position: absolute;
+    text-align: right;
+    color: #e6b9f3;
+    font-family: "Tangerine", cursive;
+    text-shadow: 2px 2px 3px black;
+    letter-spacing: .1rem;
+    bottom: 5%;
+    right: 5%;
+    width: 60%;
+    font-size: 1.5rem; }
+    @media screen and (min-width: 576px) {
+      .bridesmaid-quote {
+        font-size: 2rem; } }
+    @media screen and (min-width: 768px) {
+      .bridesmaid-quote {
+        font-size: 2.5rem; } }
+    @media screen and (min-width: 992px) {
+      .bridesmaid-quote {
+        width: 90%;
+        bottom: 15%;
+        font-size: 2rem; } }
+    @media screen and (min-width: 1200px) {
+      .bridesmaid-quote {
+        width: 90%;
+        bottom: 15%;
+        font-size: 2.8rem; } }
+    .bridesmaid-quote blockquote::before {
+      font-family: "Palanquin Dark", sans-serif;
+      content: '“'; }
+    .bridesmaid-quote blockquote::after {
+      font-family: "Palanquin Dark", sans-serif;
+      content: '​‌”'; }
+  .bridesmaid-social {
+    position: absolute;
+    bottom: 69%;
+    left: 5%;
+    text-align: center; }
+    .bridesmaid-social a {
+      color: #e6b9f3;
+      display: inline-block;
+      font-size: 1.4rem;
+      padding: 5px; }
+    @media screen and (min-width: 992px) {
+      .bridesmaid-social {
+        bottom: 5%;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0; } }
+
+.groomsmen {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column; }
+  @media screen and (min-width: 992px) {
+    .groomsmen {
+      flex-direction: row; } }
+  .groomsmen-col-1 {
+    width: 100%;
+    height: 50vh;
+    background-color: #94b58b;
+    position: relative; }
+    @media screen and (min-width: 992px) {
+      .groomsmen-col-1 {
+        width: 25%;
+        height: 100vh; } }
+  .groomsmen-1 {
+    background: url("../../../temp/assets/images/groomsmen1.jpg") center 15% no-repeat;
+    background-size: cover;
+    order: 1; }
+  .groomsmen-2 {
+    background: url("../../../temp/assets/images/groomsmen2.jpg") center 10% no-repeat;
+    background-size: cover;
+    order: 2; }
+  .groomsmen-3 {
+    background: url("../../../temp/assets/images/groomsmen3.jpg") center 10% no-repeat;
+    background-size: cover;
+    order: 3; }
+  .groomsmen-4 {
+    background: url("../../../temp/assets/images/groomsmen4.jpg") 21% 23% no-repeat;
+    background-size: cover;
+    order: 4; }
+  .groomsmen-name {
+    position: absolute;
+    text-align: center;
+    left: 5%;
+    top: 15%; }
+    @media screen and (min-width: 992px) {
+      .groomsmen-name {
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        top: 85%; } }
+    .groomsmen-name h3 {
+      font-weight: 800;
+      color: #eef1e2;
+      letter-spacing: .1rem; }
+  .groomsmen-quote {
+    position: absolute;
+    text-align: right;
+    color: #e6b9f3;
+    font-family: "Tangerine", cursive;
+    text-shadow: 2px 2px 3px black;
+    letter-spacing: .1rem;
+    font-size: 1.5rem;
+    bottom: 5%;
+    right: 5%;
+    width: 60%; }
+    @media screen and (min-width: 576px) {
+      .groomsmen-quote {
+        font-size: 2rem; } }
+    @media screen and (min-width: 768px) {
+      .groomsmen-quote {
+        font-size: 2.5rem; } }
+    @media screen and (min-width: 992px) {
+      .groomsmen-quote {
+        width: 90%;
+        bottom: 15%;
+        font-size: 2rem; } }
+    @media screen and (min-width: 1200px) {
+      .groomsmen-quote {
+        width: 90%;
+        bottom: 15%;
+        font-size: 2.8rem; } }
+    .groomsmen-quote blockquote::before {
+      font-family: "Palanquin Dark", sans-serif;
+      content: '“'; }
+    .groomsmen-quote blockquote::after {
+      font-family: "Palanquin Dark", sans-serif;
+      content: '​‌”'; }
+  .groomsmen-social {
+    position: absolute;
+    bottom: 69%;
+    left: 5%;
+    text-align: center; }
+    .groomsmen-social a {
+      color: #e6b9f3;
+      display: inline-block;
+      font-size: 1.4rem;
+      padding: 5px; }
+    @media screen and (min-width: 992px) {
+      .groomsmen-social {
+        bottom: 5%;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0; } }
