@@ -82,7 +82,11 @@ var Home = function () {
   function Home() {
     _classCallCheck(this, Home);
 
-    this.template = /*html*/"\n    <div class=\"wed-heading row\">\n        <div class=\"wed-heading-wrapper col\">\n            <h1>Angelo & Klaudia\n                <br>\n                <span class=\"std\">Save the date</span>\n                <span class=\"wed-date\">22.08.2015</span>\n            </h1>\n        </div>\n    </div>\n    ";
+    this.template = function () {
+      return (/*html*/"\n      <div class=\"wed-heading row\">\n          <div class=\"wed-heading-wrapper col\">\n              <h1>Angelo & Klaudia\n                  <br>\n                  <span class=\"std\">Save the date</span>\n                  <span class=\"wed-date\">22.08.2015</span>\n              </h1>\n          </div>\n      </div>\n      "
+      );
+    };
+
     this.homeMenu = document.querySelector("#home");
     this.spa = document.querySelector(".wed-spa");
     this.homeSection = document.querySelector(".wed-home");
@@ -91,13 +95,13 @@ var Home = function () {
   _createClass(Home, [{
     key: "loadHome",
     value: function loadHome() {
-      this.homeSection.classList.add('wed-front');
+
       this.loadTemplate();
     }
   }, {
     key: "loadTemplate",
     value: function loadTemplate() {
-      this.spa.innerHTML = this.template;
+      this.spa.innerHTML = this.template();
     }
   }]);
 
@@ -123,6 +127,7 @@ var _Navigation2 = _interopRequireDefault(_Navigation);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var navigation = new _Navigation2.default();
 // import Couple from './modules/Couple';
 // import Message from './modules/Message';
 
@@ -130,11 +135,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var home = new _Home2.default();
 
 window.addEventListener("load", function () {
-  var loader = new _Home2.default();
-  loader.loadHome();
+  navigation.loadHomeOnLoad();
 });
 //End of home
-var navigation = new _Navigation2.default();
 
 /***/ }),
 /* 2 */
@@ -157,6 +160,14 @@ var _Couple = __webpack_require__(3);
 
 var _Couple2 = _interopRequireDefault(_Couple);
 
+var _Bridesmaid = __webpack_require__(6);
+
+var _Bridesmaid2 = _interopRequireDefault(_Bridesmaid);
+
+var _Groom = __webpack_require__(7);
+
+var _Groom2 = _interopRequireDefault(_Groom);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -165,8 +176,12 @@ var Navigation = function () {
   function Navigation() {
     _classCallCheck(this, Navigation);
 
+    this.home = new _Home2.default();
     this.couple = new _Couple2.default();
+    this.bridesmaid = new _Bridesmaid2.default();
+    this.groomsmen = new _Groom2.default();
     this.spa = document.querySelector(".wed-spa");
+    this.homeSection = document.querySelector(".wed-home");
 
     this.homeButton = document.querySelector('#home');
     this.coupleButton = document.querySelector('#couple');
@@ -178,17 +193,29 @@ var Navigation = function () {
 
     this.loadHome();
     this.loadCouple();
+    this.loadBridesmaid();
+    this.loadGroom();
   }
 
   _createClass(Navigation, [{
-    key: 'loadHome',
+    key: 'loadHomeOnLoad',
 
     // 1. Load home.
+    value: function loadHomeOnLoad() {
+      this.homeSection.classList.add('wed-front');
+      this.spa.innerHTML = this.home.template();
+    }
+
+    // 2. Load home on click
+
+  }, {
+    key: 'loadHome',
     value: function loadHome() {
       var _this = this;
       this.homeButton.addEventListener("click", function () {
-        var home = new _Home2.default();
-        _this.spa.innerHTML = home.template;
+        console.log('a');
+        _this.homeSection.classList.add('wed-front');
+        _this.spa.innerHTML = _this.home.template();
       });
     }
   }, {
@@ -199,6 +226,7 @@ var Navigation = function () {
     value: function loadCouple() {
       var _this = this;
       this.coupleButton.addEventListener("click", function () {
+        _this.homeSection.classList.remove('wed-front');
         _this.couple.loadCoupleTempStyle();
       });
     }
@@ -210,7 +238,17 @@ var Navigation = function () {
     value: function loadBridesmaid() {
       var _this = this;
       this.bridesmaidButton.addEventListener("click", function () {
-        _this.bridesmaid.loadBridesmaidTemplate();
+        _this.homeSection.classList.remove('wed-front');
+        _this.spa.innerHTML = _this.bridesmaid.template();
+      });
+    }
+  }, {
+    key: 'loadGroom',
+    value: function loadGroom() {
+      var _this = this;
+      this.groomsmenButton.addEventListener("click", function () {
+        _this.homeSection.classList.remove('wed-front');
+        _this.spa.innerHTML = _this.groomsmen.template();
       });
     }
   }]);
@@ -568,6 +606,146 @@ var Message = function () {
 }();
 
 exports.default = Message;
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Bridesmaid = function () {
+  function Bridesmaid() {
+    _classCallCheck(this, Bridesmaid);
+
+    //Start constructor.
+    //--1. Bridesmaid Template.
+    this.template = function () {
+      return (/*html*/'\n      <div class="bridesmaid">\n        <div class="bridesmaid-col-1 bridesmaid-1">\n          <div class="bridesmaid-quote bridesmaid-quote-1">\n            <blockquote>' + this.bridesmaid1.message + '</blockquote>\n          </div>\n          <div class=bridesmaid-name>\n            <h3 class="bridesmaid-name-first-name">' + this.bridesmaid1.fName + ' ' + this.bridesmaid1.lName + '</h3>\n          </div>\n        </div>\n        <div class="bridesmaid-col-1 bridesmaid-2">\n          <div class="bridesmaid-quote bridesmaid-quote-2">\n            <blockquote>' + this.bridesmaid2.message + '</blockquote>\n          </div>\n          <div class=bridesmaid-name>\n            <h3 class="bridesmaid-name-first-name">' + this.bridesmaid2.fName + ' ' + this.bridesmaid2.lName + '</h3>\n          </div>\n        </div>\n        <div class="bridesmaid-col-1 bridesmaid-3">\n          <div class="bridesmaid-quote bridesmaid-quote-3">\n            <blockquote>' + this.bridesmaid3.message + '</blockquote>\n          </div>\n          <div class=bridesmaid-name>\n            <h3 class="bridesmaid-name-first-name">' + this.bridesmaid3.fName + ' ' + this.bridesmaid3.lName + '</h3>\n          </div>\n        </div>\n        <div class="bridesmaid-col-1 bridesmaid-4">\n          <div class="bridesmaid-quote bridesmaid-quote-4">\n            <blockquote>' + this.bridesmaid4.message + '</blockquote>\n          </div>\n          <div class=bridesmaid-name>\n            <h3 class="bridesmaid-name-first-name">' + this.bridesmaid4.fName + ' ' + this.bridesmaid4.lName + '</h3>\n          </div>\n        </div>\n      </div>\n      '
+      );
+    };
+
+    //--2. Bridesmaid info.
+    this.bridesmaid1 = {
+      fName: 'Jane',
+      lName: 'Doe',
+      message: 'Congratulations! You two look beautiful each other. Be happy forever.'
+    };
+    this.bridesmaid2 = {
+      fName: 'Jena',
+      lName: 'Doe',
+      message: 'Congratulations! You two look beautiful each other. Be happy forever.'
+    };
+    this.bridesmaid3 = {
+      fName: 'Clementine',
+      lName: 'Doe',
+      message: 'Congratulations! You two look beautiful each other. Be happy forever.'
+    };
+    this.bridesmaid4 = {
+      fName: 'Carolina',
+      lName: 'Doe',
+      message: 'Congratulations! You two look beautiful each other. Be happy forever.'
+    };
+
+    //--Initiate methods.
+
+    //--End methods initiation
+    //End of constructor
+  }
+
+  _createClass(Bridesmaid, [{
+    key: 'loadBridesmaidTemplate',
+
+    //Declare methods.
+
+    //--1.
+    value: function loadBridesmaidTemplate() {}
+    //End methods declaration.
+
+  }]);
+
+  return Bridesmaid;
+}();
+
+exports.default = Bridesmaid;
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Groomsmen = function () {
+  function Groomsmen() {
+    _classCallCheck(this, Groomsmen);
+
+    //Start constructor.
+    //--1.  Template.
+    this.template = function () {
+      return (/*html*/'\n      <div class="groomsmen">\n        <div class="groomsmen-col-1 groomsmen-1">\n          <div class="groomsmen-quote groomsmen-quote-1">\n            <blockquote>' + this.groomsmen1.message + '</blockquote>\n          </div>\n          <div class=groomsmen-name>\n            <h3 class="groomsmen-name-first-name">' + this.groomsmen1.fName + ' ' + this.groomsmen1.lName + '</h3>\n          </div>\n        </div>\n        <div class="groomsmen-col-1 groomsmen-2">\n          <div class="groomsmen-quote groomsmen-quote-2">\n            <blockquote>' + this.groomsmen2.message + '</blockquote>\n          </div>\n          <div class=groomsmen-name>\n            <h3 class="groomsmen-name-first-name">' + this.groomsmen2.fName + ' ' + this.groomsmen2.lName + '</h3>\n          </div>\n        </div>\n        <div class="groomsmen-col-1 groomsmen-3">\n          <div class="groomsmen-quote groomsmen-quote-3">\n            <blockquote>' + this.groomsmen3.message + '</blockquote>\n          </div>\n          <div class=groomsmen-name>\n            <h3 class="groomsmen-name-first-name">' + this.groomsmen3.fName + ' ' + this.groomsmen3.lName + '</h3>\n          </div>\n        </div>\n        <div class="groomsmen-col-1 groomsmen-4">\n          <div class="groomsmen-quote groomsmen-quote-4">\n            <blockquote>' + this.groomsmen4.message + '</blockquote>\n          </div>\n          <div class=groomsmen-name>\n            <h3 class="groomsmen-name-first-name">' + this.groomsmen4.fName + ' ' + this.groomsmen4.lName + '</h3>\n          </div>\n        </div>\n      </div>\n      '
+      );
+    };
+
+    //--2. Groom info.
+    this.groomsmen1 = {
+      fName: 'John',
+      lName: 'Doe',
+      message: 'Congratulations! You two look beautiful each other. Be happy forever.'
+    };
+    this.groomsmen2 = {
+      fName: 'Danny',
+      lName: 'Doe',
+      message: 'Congratulations! You two look beautiful each other. Be happy forever.'
+    };
+    this.groomsmen3 = {
+      fName: 'Shaun',
+      lName: 'Doe',
+      message: 'Congratulations! You two look beautiful each other. Be happy forever.'
+    };
+    this.groomsmen4 = {
+      fName: 'Carol',
+      lName: 'Doe',
+      message: 'Congratulations! You two look beautiful each other. Be happy forever.'
+    };
+
+    //--Initiate methods.
+
+    //--End methods initiation
+    //End of constructor
+  }
+
+  _createClass(Groomsmen, [{
+    key: 'loadGroomTemplate',
+
+    //Declare methods.
+
+    //--1.
+    value: function loadGroomTemplate() {}
+    //End methods declaration.
+
+  }]);
+
+  return Groomsmen;
+}();
+
+exports.default = Groomsmen;
 
 /***/ })
 /******/ ]);

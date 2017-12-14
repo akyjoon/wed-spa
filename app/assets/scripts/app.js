@@ -1,5 +1,6 @@
 import Home from './modules/Home';
 import Navigation from './modules/Navigation';
+var navigation = new Navigation();
 // import Couple from './modules/Couple';
 // import Message from './modules/Message';
 
@@ -7,8 +8,6 @@ import Navigation from './modules/Navigation';
 var home = new Home();
 
 window.addEventListener("load", function() {
-  var loader = new Home;
-  loader.loadHome();
+  navigation.loadHomeOnLoad();
 })
 //End of home
-var navigation = new Navigation();
