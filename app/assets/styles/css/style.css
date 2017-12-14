@@ -332,16 +332,17 @@ body {
     position: absolute;
     text-align: center;
     left: 5%;
-    top: 15%; }
+    top: 32px; }
     @media screen and (min-width: 992px) {
       .bridesmaid-name {
-        width: 50%;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
         left: 0;
         right: 0;
-        top: 85%; } }
+        top: 80%; } }
     .bridesmaid-name h3 {
+      font-size: 1.5rem;
       font-weight: 800;
       color: #eef1e2;
       letter-spacing: .1rem; }
@@ -355,10 +356,12 @@ body {
     bottom: 5%;
     right: 5%;
     width: 60%;
-    font-size: 1.5rem; }
+    font-size: 1.5rem;
+    line-height: 1.5rem; }
     @media screen and (min-width: 576px) {
       .bridesmaid-quote {
-        font-size: 2rem; } }
+        font-size: 2rem;
+        line-height: 2.5rem; } }
     @media screen and (min-width: 768px) {
       .bridesmaid-quote {
         font-size: 2.5rem; } }
@@ -371,7 +374,8 @@ body {
       .bridesmaid-quote {
         width: 90%;
         bottom: 15%;
-        font-size: 2.8rem; } }
+        font-size: 2.8rem;
+        line-height: 3rem; } }
     .bridesmaid-quote blockquote::before {
       font-family: "Palanquin Dark", sans-serif;
       content: '“'; }
@@ -380,7 +384,7 @@ body {
       content: '​‌”'; }
   .bridesmaid-social {
     position: absolute;
-    bottom: 69%;
+    top: 50px;
     left: 5%;
     text-align: center; }
     .bridesmaid-social a {
@@ -390,7 +394,7 @@ body {
       padding: 5px; }
     @media screen and (min-width: 992px) {
       .bridesmaid-social {
-        bottom: 5%;
+        top: 85%;
         margin-left: auto;
         margin-right: auto;
         left: 0;
@@ -432,16 +436,17 @@ body {
     position: absolute;
     text-align: center;
     left: 5%;
-    top: 15%; }
+    top: 32px; }
     @media screen and (min-width: 992px) {
       .groomsmen-name {
-        width: 50%;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
         left: 0;
         right: 0;
-        top: 85%; } }
+        top: 80%; } }
     .groomsmen-name h3 {
+      font-size: 1.5rem;
       font-weight: 800;
       color: #eef1e2;
       letter-spacing: .1rem; }
@@ -452,13 +457,15 @@ body {
     font-family: "Tangerine", cursive;
     text-shadow: 2px 2px 3px black;
     letter-spacing: .1rem;
-    font-size: 1.5rem;
     bottom: 5%;
     right: 5%;
-    width: 60%; }
+    width: 60%;
+    font-size: 1.5rem;
+    line-height: 1.5rem; }
     @media screen and (min-width: 576px) {
       .groomsmen-quote {
-        font-size: 2rem; } }
+        font-size: 2rem;
+        line-height: 2.5rem; } }
     @media screen and (min-width: 768px) {
       .groomsmen-quote {
         font-size: 2.5rem; } }
@@ -471,7 +478,8 @@ body {
       .groomsmen-quote {
         width: 90%;
         bottom: 15%;
-        font-size: 2.8rem; } }
+        font-size: 2.8rem;
+        line-height: 3rem; } }
     .groomsmen-quote blockquote::before {
       font-family: "Palanquin Dark", sans-serif;
       content: '“'; }
@@ -480,7 +488,7 @@ body {
       content: '​‌”'; }
   .groomsmen-social {
     position: absolute;
-    bottom: 69%;
+    top: 50px;
     left: 5%;
     text-align: center; }
     .groomsmen-social a {
@@ -490,7 +498,7 @@ body {
       padding: 5px; }
     @media screen and (min-width: 992px) {
       .groomsmen-social {
-        bottom: 5%;
+        top: 85%;
         margin-left: auto;
         margin-right: auto;
         left: 0;

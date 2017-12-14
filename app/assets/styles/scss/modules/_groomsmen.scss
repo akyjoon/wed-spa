@@ -42,17 +42,18 @@
     position: absolute;
     text-align: center;
     left: 5%;
-    top: 15%;
+    top: 32px;
     @media #{$break-large} {
-      width: 50%;
+      width: 100%;
       margin-left: auto;
       margin-right: auto;
       left: 0;
       right: 0;
-      top: 85%;
+      top: 80%;
     }
 
     & h3 {
+      font-size: 1.5rem;
       font-weight: 800;
       color: $white;
       letter-spacing: .1rem;
@@ -66,12 +67,15 @@
     font-family: $curvy-font;
     text-shadow: 2px 2px 3px black;
     letter-spacing: .1rem;
-    font-size: 1.5rem;
     bottom: 5%;
     right: 5%;
     width: 60%;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+
     @media #{$break-small} {
       font-size: 2rem;
+      line-height: 2.5rem;
     }
     @media #{$break-medium} {
       font-size: 2.5rem;
@@ -81,11 +85,12 @@
       width: 90%;
       bottom: 15%;
       font-size: 2rem;
-  }
+    }
     @media #{$break-xlarge} {
       width: 90%;
       bottom: 15%;
       font-size: 2.8rem;
+      line-height: 3rem;
   }
     & blockquote::before{
       font-family: $palaquin-font;
@@ -95,12 +100,11 @@
       font-family: $palaquin-font;
       content: '​‌”';
     }
-
   }
 
   &-social {
     position: absolute;
-    bottom: 69%;
+    top: 50px;
     left: 5%;
     text-align: center;
     & a {
@@ -109,12 +113,14 @@
       font-size: 1.4rem;
       padding: 5px;
     }
+
     @media #{$break-large} {
-      bottom: 5%;
+      top: 85%;
       margin-left: auto;
       margin-right: auto;
       left: 0;
       right: 0;
     }
   }
+
 }
