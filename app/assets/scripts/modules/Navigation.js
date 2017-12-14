@@ -36,7 +36,6 @@ class Navigation {
   loadHome() {
     var _this = this;
     this.homeButton.addEventListener("click", function() {
-      console.log('a')
       _this.homeSection.classList.add('wed-front');
       _this.spa.innerHTML = _this.home.template();
     })

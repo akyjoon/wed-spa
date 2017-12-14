@@ -1,3 +1,4 @@
+require("babel-polyfill");
 import Home from './modules/Home';
 import Navigation from './modules/Navigation';
 var navigation = new Navigation();

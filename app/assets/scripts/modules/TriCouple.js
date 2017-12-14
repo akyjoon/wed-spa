@@ -31,10 +31,13 @@ class TriCouple {
 
   //SET HEIGHT
   setHeight() {
-    this.wedCoupleNewlyweds.forEach((partner) => {
-      partner.style.height = this.diagonal + 'px';
+    var _this = this;
+    Array.prototype.forEach.call(this.wedCoupleNewlyweds, function(partner) {
+      partner.style.height = _this.diagonal + 'px';
     })
-
+    // this.wedCoupleNewlyweds.forEach((partner) => {
+    //   partner.style.height = this.diagonal + 'px';
+    // });
   };
   //POSITION TO LEFT & RIGHT
   setPosition(){

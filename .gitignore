@@ -39,3 +39,5 @@ Thumbs.db
 # node modules #
 node_modules/
 gulp/
+gulpfile.js
+webpack.config.js
