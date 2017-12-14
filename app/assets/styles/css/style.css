@@ -313,19 +313,19 @@ body {
         width: 25%;
         height: 100vh; } }
   .bridesmaid-1 {
-    background: url("../../../temp/assets/images/bridesmaid1.jpg") center 10% no-repeat;
+    background: url("../../../temp/assets/images/bridesmaid1_resize.jpg") center 10% no-repeat;
     background-size: cover;
     order: 1; }
   .bridesmaid-2 {
-    background: url("../../../temp/assets/images/bridesmaid2.jpg") center 21% no-repeat;
+    background: url("../../../temp/assets/images/bridesmaid2_resize.jpg") center 21% no-repeat;
     background-size: cover;
     order: 2; }
   .bridesmaid-3 {
-    background: url("../../../temp/assets/images/bridesmaid3.jpg") center 44% no-repeat;
+    background: url("../../../temp/assets/images/bridesmaid3_resize.jpg") center 44% no-repeat;
     background-size: cover;
     order: 3; }
   .bridesmaid-4 {
-    background: url("../../../temp/assets/images/bridesmaid4.jpg") center 22% no-repeat;
+    background: url("../../../temp/assets/images/bridesmaid4_resize.jpg") center 22% no-repeat;
     background-size: cover;
     order: 4; }
   .bridesmaid-name {
@@ -413,19 +413,19 @@ body {
         width: 25%;
         height: 100vh; } }
   .groomsmen-1 {
-    background: url("../../../temp/assets/images/groomsmen1.jpg") center 15% no-repeat;
+    background: url("../../../temp/assets/images/groomsmen1_resize.jpg") center 15% no-repeat;
     background-size: cover;
     order: 1; }
   .groomsmen-2 {
-    background: url("../../../temp/assets/images/groomsmen2.jpg") center 10% no-repeat;
+    background: url("../../../temp/assets/images/groomsmen2_resize.jpg") center 10% no-repeat;
     background-size: cover;
     order: 2; }
   .groomsmen-3 {
-    background: url("../../../temp/assets/images/groomsmen3.jpg") center 10% no-repeat;
+    background: url("../../../temp/assets/images/groomsmen3_resize.jpg") center 10% no-repeat;
     background-size: cover;
     order: 3; }
   .groomsmen-4 {
-    background: url("../../../temp/assets/images/groomsmen4.jpg") 21% 23% no-repeat;
+    background: url("../../../temp/assets/images/groomsmen4_resize.jpg") 21% 23% no-repeat;
     background-size: cover;
     order: 4; }
   .groomsmen-name {
