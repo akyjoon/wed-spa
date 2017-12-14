@@ -378,6 +378,23 @@ body {
     .bridesmaid-quote blockquote::after {
       font-family: "Palanquin Dark", sans-serif;
       content: '​‌”'; }
+  .bridesmaid-social {
+    position: absolute;
+    bottom: 69%;
+    left: 5%;
+    text-align: center; }
+    .bridesmaid-social a {
+      color: #e6b9f3;
+      display: inline-block;
+      font-size: 1.4rem;
+      padding: 5px; }
+    @media screen and (min-width: 992px) {
+      .bridesmaid-social {
+        bottom: 5%;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0; } }
 
 .groomsmen {
   display: flex;
@@ -461,3 +478,20 @@ body {
     .groomsmen-quote blockquote::after {
       font-family: "Palanquin Dark", sans-serif;
       content: '​‌”'; }
+  .groomsmen-social {
+    position: absolute;
+    bottom: 69%;
+    left: 5%;
+    text-align: center; }
+    .groomsmen-social a {
+      color: #e6b9f3;
+      display: inline-block;
+      font-size: 1.4rem;
+      padding: 5px; }
+    @media screen and (min-width: 992px) {
+      .groomsmen-social {
+        bottom: 5%;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0; } }
