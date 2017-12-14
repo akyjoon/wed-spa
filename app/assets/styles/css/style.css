@@ -126,7 +126,7 @@ body {
       right: 0; } }
 
 .wed-couple-groom-img {
-  background: url("../../images/bridew.jpg") right no-repeat;
+  background: url("../../../temp/assets/images/bridew.jpg") right center no-repeat;
   background-size: cover;
   -webkit-transform-origin: top right;
   transform-origin: top right; }
@@ -215,12 +215,19 @@ body {
   transition: 1s;
   position: absolute;
   top: 30vh;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
   background-color: #94b58b;
-  border-radius: 150px;
   text-align: center;
+  font-size: .7rem;
   cursor: pointer; }
+  @media screen and (min-width: 768px) {
+    .wed-couple-newlyweds-message {
+      font-size: 1rem;
+      width: 150px;
+      height: 150px;
+      border-radius: 150px; } }
   .wed-couple-newlyweds-message span {
     transition: 1s;
     position: absolute;
@@ -360,6 +367,11 @@ body {
         width: 90%;
         bottom: 15%;
         font-size: 2rem; } }
+    @media screen and (min-width: 1200px) {
+      .bridesmaid-quote {
+        width: 90%;
+        bottom: 15%;
+        font-size: 2.8rem; } }
     .bridesmaid-quote blockquote::before {
       font-family: "Palanquin Dark", sans-serif;
       content: '“'; }
@@ -438,6 +450,11 @@ body {
         width: 90%;
         bottom: 15%;
         font-size: 2rem; } }
+    @media screen and (min-width: 1200px) {
+      .groomsmen-quote {
+        width: 90%;
+        bottom: 15%;
+        font-size: 2.8rem; } }
     .groomsmen-quote blockquote::before {
       font-family: "Palanquin Dark", sans-serif;
       content: '“'; }

@@ -50,7 +50,7 @@
 }
 
 .wed-couple-groom-img {
-    background: url('../../images/bridew.jpg') right no-repeat;
+    background: url('../../../temp/assets/images/bridew.jpg') right center no-repeat;
     background-size: cover;
     -webkit-transform-origin: top right;
             transform-origin: top right;
@@ -150,17 +150,24 @@
         }
     }
 }
-$message-size: 150px;
+$message-size: 100px;
 .wed-couple-newlyweds-message {
     transition: 1s;
     position: absolute;
     top: 30vh;
-    width: $message-size;
-    height: $message-size;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
     background-color: $green;
-    border-radius: $message-size;
     text-align: center;
+    font-size: .7rem;
     cursor: pointer;
+    @media #{$break-medium} {
+      font-size: 1rem;
+      width: 150px;
+      height: 150px;
+      border-radius: 150px;
+    }
     span {
         transition: 1s;
         position: absolute;
